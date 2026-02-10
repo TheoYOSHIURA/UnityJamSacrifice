@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d10e0d5d20d4b4ba232623ab496d9f, type: 3}
+  m_Name: BaseMaceStat
+  m_EditorClassIdentifier: 
+  _hpMax: 0
+  _strength: 0
+  _dexterity: 0
+  _intelligence: 0
+  _defensePhy: 0
+  _defenseMag: 0
+  _resistance: 0
+  _chance: 0
+  _dodgeRate: 0
+  _critRate: 0
+  _critDamage: 0
+  _speed: 0
