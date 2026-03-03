@@ -6,7 +6,6 @@ public class TeamManager : MonoBehaviour
 {
     #region Attributes
     private static TeamManager _instance;
-
     private List<Character> _team = new List<Character>();
     #endregion Attributes
 

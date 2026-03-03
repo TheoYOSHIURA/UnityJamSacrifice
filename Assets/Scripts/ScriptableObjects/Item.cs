@@ -8,4 +8,5 @@ public class Item : ScriptableObject
     [SerializeField] private Statistics _statistics;
 
     public string ItemName { get => _itemName; set => _itemName = value; }
+    public Statistics Statistics { get => _statistics; set => _statistics = value; }
 }
