@@ -17,11 +17,13 @@ public class CombatManager : MonoBehaviour
 {
     #region Attributes
     private static CombatManager _instance;
-    private List<Character> _characterTeam = new List<Character>();
-    private List<Enemy> _enemyTeam = new List<Enemy>();
+    private List<Character> _playerTeam = new List<Character>();
+    private List<Character> _enemyTeam = new List<Character>();
     private List<Character> _turnOrder = new List<Character>();
     private ECombatSteps _currentCombatStep = ECombatSteps.StartCombat;
-
+    private Transform[] _playerSpawnpoints;
+    private Transform[] _enemySpawnpoints;
+    [SerializeField] private CharacterController _characterPrefab;
     #endregion Attributes
 
     #region Properties
@@ -38,6 +40,7 @@ public class CombatManager : MonoBehaviour
         CombatLogic();
     }
 
+    #region Methods
     private void SingletonVerification()
     {
         if (_instance == null)
@@ -55,6 +58,7 @@ public class CombatManager : MonoBehaviour
         switch (_currentCombatStep)
         {
             case ECombatSteps.StartCombat:
+                SpawnCharacters();
                 DetermineTurnOrder();
                 _currentCombatStep++;
                 break;
@@ -71,11 +75,27 @@ public class CombatManager : MonoBehaviour
         }
     }
 
+    private void SpawnCharacters()
+    {
+        _playerTeam.AddRange(TeamManager.Instance.Team);
+        for (int i = 0; i < _playerTeam.Count; i++)
+        {
+            CharacterController characterInstance = Instantiate(_characterPrefab, _playerSpawnpoints[i].transform);
+            characterInstance.CharacterData = _playerTeam[i];
+        }
+        for (int i = 0; i < _enemyTeam.Count; i++)
+        {
+            CharacterController characterInstance = Instantiate(_characterPrefab, _enemySpawnpoints[i].transform);
+            characterInstance.CharacterData = _enemyTeam[i];
+        }
+    }
+
     private void DetermineTurnOrder()
     {
-        _turnOrder.AddRange(_characterTeam);
+        _turnOrder.AddRange(_playerTeam);
         _turnOrder.AddRange(_enemyTeam);
         List<Character> sortedList = _turnOrder.OrderBy(o=>o.Statistics.Speed).ToList();
         _turnOrder = sortedList;
     }
+    #endregion Methods
 }
