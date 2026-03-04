@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a641e6a10a07e47b49148a5bdaac5c, type: 3}
+  m_Name: Elf Bladedancer
+  m_EditorClassIdentifier: 
+  _spriteImage: {fileID: 2300030769315319059, guid: 9d13280c03f389c4587a1a749117cec5, type: 3}
+  _animatorController: {fileID: -5658342374208784573, guid: 9d13280c03f389c4587a1a749117cec5, type: 3}
+  _idleAnimation: {fileID: 6185097879878276173, guid: 9d13280c03f389c4587a1a749117cec5, type: 3}
+  _name: Elf Bladedancer
+  _statistics: {fileID: 0}
+  _weapon: {fileID: 0}
+  _helmet: {fileID: 0}
+  _chesplate: {fileID: 0}
+  _leggings: {fileID: 0}
+  _boots: {fileID: 0}
+  _spells: []
