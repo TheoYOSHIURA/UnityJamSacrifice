@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Character", menuName = "ScriptableObjects/Character")]
 public class Character : ScriptableObject
 {
     [SerializeField] private Sprite _spriteImage;
+    [SerializeField] private AnimatorController _animatorController;
+    [SerializeField] private AnimationClip _idleAnimation;
     [SerializeField] private string _name;
     [SerializeField] private Statistics _statistics;
     [SerializeField] private Weapon _weapon;
@@ -24,4 +27,6 @@ public class Character : ScriptableObject
     public Leggings Leggings { get => _leggings; set => _leggings = value; }
     public Boots Boots { get => _boots; set => _boots = value; }
     public Spell[] Spells { get => _spells; set => _spells = value; }
+    public AnimatorController AnimatorController { get => _animatorController; set => _animatorController = value; }
+    public AnimationClip IdleAnimation { get => _idleAnimation; set => _idleAnimation = value; }
 }
